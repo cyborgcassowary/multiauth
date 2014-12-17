@@ -17,8 +17,9 @@ class UsersTableSeeder extends Seeder {
 				'email' => 'info@cyborgcassowary.com',
 				'password' => Hash::make('ItIsNatural2BeAfraid')
 			]);
-		// Passwords titled after Explosions in the Sky songs on 'All Of A Sudden I Miss Everyone':
-		// https://www.youtube.com/watch?v=6sDtb5-JrqE
+
+			// Passwords titled after Explosions in the Sky songs on 'All Of A Sudden I Miss Everyone':
+			// https://www.youtube.com/watch?v=6sDtb5-JrqE
 	}
 
 }
