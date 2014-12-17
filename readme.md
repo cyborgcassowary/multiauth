@@ -1,3 +1,15 @@
+# Multi Auth with Laravel
+
+Testing Multi Authentication with Laravel and will hopefully come to a solution soon.
+
+Migrations are set and seeds are ready... basically this means it can be easily deployed to any apache server environment, e.g., WAMP, MAMP, XAMPP, Vagrant. Vagrant is almost a favorite of mine. Anyway, deploy with your favorite CLI with following commands:
+
+         php artisan migrate
+
+         php artisan db:seed
+
+Stay tuned for further updates on this documentation. I'm sure I will be running into a ton of errors with Multiauth library by Ollie Read.
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
