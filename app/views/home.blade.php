@@ -1,26 +1,22 @@
 @extends('layouts.master')
 
-@section
+@section('content')
 
 		{{--@foreach($users as $user)--}}
 			{{--<li>{{ link_to($user->username, $user->username); }}</li>--}}
 		{{--@endforeach--}}
 
-		{{ Form::open(array('url' => 'dashboard')) }}
-		<div class="form-group">
+		{{ Form::open(array('sessions' => 'sessions.store')) }}
+	<div class="form-group">
 			{{Form::label('email', 'E-Mail Address') }}
-			{{ Form::text('email', 'example@gmail.com') }}
-</div>
-<div class="form-group">
+			{{ Form::email('email', 'example@gmail.com') }}
+	</div>
+	<div class="form-group">
 			{{ Form::label('password', 'Password') }}
 			{{ Form::password('password') }}
-</div>
-<br/><br/>
+	</div>
 			{{ Form::submit('Sign in') }}
         {{ Form::close() }}
-
-
-
 
 
 @stop
