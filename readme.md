@@ -10,6 +10,14 @@ Migrations are set and seeds are ready... basically this means it can be easily 
 
 Stay tuned for further updates on this documentation. I'm sure I will be running into a ton of errors with Multiauth library by Ollie Read.
 
+**12/18/2014**
+
+Took almost 24 hours. However, after so much pain and aggravation, I was able to login with a user in the users table with Multiauth package. My one qurrel with the php package is that the default Laravel filters are shut off and I can't logout.
+
+Will need to report later on how to fix this.
+
+
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
