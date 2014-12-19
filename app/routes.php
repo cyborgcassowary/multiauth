@@ -14,7 +14,7 @@ Route::resource('sessions', 'SessionsController');
 Route::get('admin', function()
 {
    return 'Admin Page';
-});
+})->before('auth');
 
 //Route::get('/', ['as' => 'home', 'uses' => 'SessionsController@index']);
 

@@ -10,13 +10,13 @@ class SessionsController extends \BaseController {
 
 	public function index()
 	{
-		if(Auth::user()) return Redirect::to('/admin');
+		// if(Auth::user()) return Redirect::to('/admin');
 		return View::make('sessions.index');
 	}
 
 	public function create()
 	{
-		if(Auth::user()) return Redirect::to('/admin');
+		//if(Auth::user()) return Redirect::to('/admin');
 
 		return View::make('sessions.index');
 	}
@@ -42,11 +42,13 @@ class SessionsController extends \BaseController {
 
 		if ($attempt) return 'Welcome '. Auth::user()->get()->username; //Redirect::intended('/');
 //
-		dd('problem');
+		return Redirect::back()->withInput();
 	}
 
 	public function destroy(){
+		Auth::logout();
 
+		return Redirect::route('sessions.create');
 	}
 
 
