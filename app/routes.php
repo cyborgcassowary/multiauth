@@ -11,10 +11,7 @@ Route::get('logout', 'SessionsController@destroy');
 
 Route::resource('sessions', 'SessionsController');
 
-Route::get('admin', function()
-{
-   return 'Admin Page';
-});
+Route::get('admin', array('as' => 'adminpage', 'before' => 'auth|csrf', 'uses' => 'SessionController@adminPage'));
 
 //Route::get('/', ['as' => 'home', 'uses' => 'SessionsController@index']);
 

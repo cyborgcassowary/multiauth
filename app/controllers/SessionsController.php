@@ -10,14 +10,13 @@ class SessionsController extends \BaseController {
 
 	public function index()
 	{
-		if(Auth::user()) return Redirect::to('/admin');
+		if(Auth::user()->check()) return Redirect::to('/admin');
 		return View::make('sessions.index');
 	}
 
 	public function create()
 	{
-		if(Auth::user()) return Redirect::to('/admin');
-
+		if(Auth::user()->check()) return Redirect::to('/admin');
 		return View::make('sessions.index');
 	}
 
@@ -25,32 +24,39 @@ class SessionsController extends \BaseController {
 	{
 		$input = Input::all();
 
-//		dd($input);
 
-//		$attempt = Auth::attempt([
-//			'email' => $input['email'],
-//			'password' => $input['password']
-//		]);
-//
-//
-//		//$attempt = Auth::attempt([ 'email' => $input['email'], 'password' => $input['password'] ]);
-//
 		$attempt = Auth::user()->attempt(array(
 			'email'     => $input['email'],
 			'password'  => $input['password']
 		));
 
-		if ($attempt) return 'Welcome '. Auth::user()->get()->username; //Redirect::intended('/');
+		$admin = Auth::user()->get();
+		
+
+		if ($attempt) return View::make('sessions.store', compact('admin'));
+
+//			'Welcome '. Auth::user()->get()->username;
 //
 		dd('problem');
+
+	}
+
+	public function adminPage(){
+		$admin = Auth::user()->get();
+
+
+		return View::make('sessions.store', compact('admin'));
+
+
+
+		//View::make('students.show', compact('stu', 'miles', 'gooddeeds', 'rmiles'));
 	}
 
 	public function destroy(){
-
+		if(Auth::user()){
+			Auth::user()->logout();
+			return Redirect::to('/');
+		}
 	}
-
-
-
-
 
 }

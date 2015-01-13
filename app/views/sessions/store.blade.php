@@ -2,6 +2,16 @@
 
 @section('content')
 
-    Store.
+    <div class="container">
+        <div class="row">
+
+
+
+                {{ $admin->username }}
+
+
+
+        </div>
+    </div>
 
 @stop

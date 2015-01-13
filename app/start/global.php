@@ -51,6 +51,11 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+//App::error(function(\Illuminate\Session\TokenMismatchException $exception)
+//{
+//	return Redirect::to('/')->with('message','Your session has expired. Please try logging in again.');
+//});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
